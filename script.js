@@ -1,6 +1,7 @@
-const count = 10;
-const apiKey = "VnGfiMSXp1MXLFozQkQGNDoDZ0XLaYuAzZhQlsCP_wA";
+const count = 5;
+const apiKey = "200zvmWOqPMzUQXeJGeEKkTqNQSRVJEzLx3rGcmBzaQ";
 const unsplashUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
+let reachEnd = false;
 
 const photoContainer = document.querySelector(".image-container");
 const loader = document.querySelector(".loader");
@@ -20,6 +21,8 @@ function displayPhotos() {
     item.appendChild(img);
     photoContainer.appendChild(item);
   });
+
+  reachEnd = false;
 }
 
 async function getPhotos() {
@@ -31,3 +34,19 @@ async function getPhotos() {
 }
 
 getPhotos();
+
+window.addEventListener("scroll", function () {
+  if (
+    this.window.innerHeight + this.window.scrollY >=
+      this.document.body.offsetHeight - 500 &&
+    reachEnd == false
+  ) {
+    getPhotos();
+    reachEnd = true;
+  }
+});
+
+console.log(" " == false);
+
+console.log(Boolean(" "));
+console.log(Number(" "));
