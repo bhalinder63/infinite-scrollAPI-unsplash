@@ -1,5 +1,5 @@
 const count = 5;
-const apiKey = "VnGfiMSXp1MXLFozQkQGNDoDZ0XLaYuAzZhQlsCP_wA";
+const apiKey = "200zvmWOqPMzUQXeJGeEKkTqNQSRVJEzLx3rGcmBzaQ";
 const unsplashUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
 let reachEnd = false;
 
@@ -45,8 +45,3 @@ window.addEventListener("scroll", function () {
     reachEnd = true;
   }
 });
-
-console.log(" " == false);
-
-console.log(Boolean(" "));
-console.log(Number(" "));
